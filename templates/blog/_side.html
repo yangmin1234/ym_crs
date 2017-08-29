@@ -1,0 +1,49 @@
+<section id="search" class="widget widget_search">
+	<form role="search" method="get" class="search-form" action="{% url 'home' %}">
+		<input value="" name="s" class="s query" placeholder="Search for" type="text">
+		<button type="submit" class="search-submit"><span style="font-size:20px" class="glyphicon glyphicon-search"
+		                                                  aria-hidden="true"></span></button>
+		<div class="clearfix"></div>
+	</form>
+</section>
+
+{% if classification %}
+<section id="categories" class="widget widget_categories">
+	<h3 class="widget-title">分类</h3>
+	<ul>
+		{% if classification %}
+			{% for x,y in classification %}
+				<li><a href="{% url 'classfiDetail' classfi=x %}">{{ x }}({{ y }})</a></li>
+				<!--上一行已修改-->
+			{% endfor %}
+		{% endif %}
+	</ul>
+</section>
+{% endif %}
+
+<script type="text/javascript">
+	/*!
+	 * Create an array of word objects, each representing a word in the cloud
+	 */
+
+	//var list=[["Java", 8], ["Android", 0], ["数据库", 1], ["算法", 0]];
+	var list = {{ tagCloud|safe}};
+
+	var word_array = new Array();
+
+	for (i in list) {
+		var temp = list[i][0];
+
+
+		word_array.push({text: list[i][0], weight: list[i][1], link: "/articleTag/" + temp});
+
+	}
+
+
+	$(function () {
+		// When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+		$("#example").jQCloud(word_array);
+	});
+</script>
+
+  
