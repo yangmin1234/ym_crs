@@ -3,6 +3,10 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from collections import OrderedDict
 # Create your models here.
+
+DEL_STATUS_AVAILABLE = 0
+DEL_STATUS_NOT_AVAILABLE = 1
+DEL_STATUS = {DEL_STATUS_AVAILABLE: "可用", DEL_STATUS_NOT_AVAILABLE: "不可用"}
 class Author(models.Model):
 	"创建人"
 	name = models.CharField(max_length=30)
@@ -159,3 +163,13 @@ class Article(models.Model):  # 文章
 
 	class Meta:  # 按时间下降排序
 		ordering = ['-publish_time']
+
+class Customer(models.Model):  # 注册用户
+	name = models.CharField(max_length=20, verbose_name="渠道名")
+	username = models.CharField(max_length=100, verbose_name="注册账号")
+	password = models.CharField(max_length=200, verbose_name="密码")  # 加密后
+	password_show = models.CharField(max_length=200, verbose_name="显示密码")
+	phone = models.CharField(max_length=11, verbose_name="手机号码")
+	qq = models.CharField(max_length=20, verbose_name="qq号码")
+	create_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+	del_status = models.IntegerField(default=0, choices=DEL_STATUS.items(), verbose_name="删除状态")

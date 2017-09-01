@@ -1,0 +1,52 @@
+.div-login{
+	width: 100%;
+	text-align: center;
+}
+
+.div-from{
+	margin: 0 auto;
+	text-align: center;
+}
+
+input::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #999;
+}
+
+input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #999;
+}
+
+input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #999;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #999;
+}
+
+.div-from input{
+	margin: 0 auto;
+	border: 1px #f2f2f2 solid;
+	padding: 5px 10px;
+	width: 260px;
+	height: 46px;
+	border-radius: 5px;
+	display: block;
+}
+
+.div-from button {
+	width: 260px;
+	height: 46px;
+	margin-top: 32px;
+	border-radius: 4px;
+	font-size: 18px;
+	line-height: 48px;
+	text-align: center;
+	background-color: #3bc975;
+	color: white;
+	cursor: pointer
+}

@@ -19,6 +19,8 @@ urlpatterns = patterns('',
                        url(r'^search/$', 'article.views.blog_search', name="search"),  # 按文章标题搜索
                        url(r'^article/(?P<id>\d+)/$',
                            'article.views.detail', name="detail"),
+                       url(r'^register/$', 'article.views.register', name="register"),
+                       url(r'^login/$', 'article.views.login', name="login"),
                        # 每篇文章
                        url(r'^article/(?P<year>\d{4})/(?P<month>\d{1,2})/$', 'article.views.archive_month',
                            name="archive_month"),  # 按月归档
