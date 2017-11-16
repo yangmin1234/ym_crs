@@ -1,5 +1,38 @@
 {% extends "base.html" %}
 {% block title %}注册{% endblock %}
-
+{% block head %}
+	<link href="{{ STATIC_URL }}css/main.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
+	<div class="div-login">
+		<div class="div-from">
+			<form method="post">
+				<div class="div-register-item">
+					<input placeholder="建议用QQ昵称，便于记忆">
+					<p>渠道名:</p>
+				</div>
+				<div class="div-register-item">
+					<input placeholder="用于佣金结算">
+					<p>支付宝账户:</p>
+				</div>
+				<div class="div-register-item">
+					<input placeholder="用于佣金结算">
+					<p>支付宝姓名:</p>
+				</div>
+				<div class="div-register-item">
+					<input placeholder="结算有问题时可通知您">
+					<p>联系手机:</p>
+				</div>
+				<div class="div-register-item">
+					<input placeholder="结算有问题时可通知您">
+					<p>联系QQ:</p>
+				</div>
+				<div class="div-register-item">
+					<input placeholder="6-16位密码">
+					<p>设置密码:</p>
+				</div>
+				<button type="submit">注册</button>
+			</form>
+		</div>
+	</div>
 {% endblock %}

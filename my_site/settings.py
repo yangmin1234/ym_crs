@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -20,9 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'p-2_9jdgcawck*piav1d(kq-!((g#8#riop01(^5ilnl6f(ram'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-TEMPLATE_DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -30,14 +29,14 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = (
-    'bootstrap_admin',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'article',
+	'bootstrap_admin',
+	'django.contrib.admin',
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.messages',
+	'django.contrib.staticfiles',
+	'article',
 )
 # LANGUAGE_CODE = 'zh-ch'
 
@@ -47,48 +46,48 @@ INSTALLED_APPS = (
 # )
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
-
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.middleware.common.CommonMiddleware',
+	'django.middleware.csrf.CsrfViewMiddleware',
+	'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+	'django.contrib.messages.middleware.MessageMiddleware',
+	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'my_site.urls'
 
 WSGI_APPLICATION = 'my_site.wsgi.application'
-
+SESSION_COOKIE_AGE = 60
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+	'default': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+	}
 }
+
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                "django.contrib.auth.context_processors.auth",
-                'django.template.context_processors.debug',
-                "django.template.context_processors.i18n",
-                "django.template.context_processors.static",
-                "django.template.context_processors.media",
-                'django.template.context_processors.request',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
+	{
+		'BACKEND': 'django.template.backends.django.DjangoTemplates',
+		'DIRS': [os.path.join(BASE_DIR, 'templates')],
+		'APP_DIRS': True,
+		'OPTIONS': {
+			'context_processors': [
+				"django.contrib.auth.context_processors.auth",
+				'django.template.context_processors.debug',
+				"django.template.context_processors.i18n",
+				"django.template.context_processors.static",
+				"django.template.context_processors.media",
+				'django.template.context_processors.request',
+				'django.contrib.messages.context_processors.messages',
+			],
+		},
+	},
 ]
 
 # Internationalization
@@ -111,26 +110,13 @@ DATA_BASE = "/data/web/ym_crs/"
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(DATA_BASE, 'static')
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_BASE, 'media')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+	os.path.join(BASE_DIR, 'static'),
 )
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
-
 
 ADMINS = {
-
-   ('yangmin', 'yangmin1234@sina.cn'),
-
+	('yangmin', 'yangmin1234@sina.cn'),
 }
-
-
-
-
-
-

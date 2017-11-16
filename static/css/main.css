@@ -28,6 +28,9 @@ input::-moz-placeholder {
 	color: #999;
 }
 
+.div-login-item{
+	margin: 20px auto;
+}
 .div-from input{
 	margin: 0 auto;
 	border: 1px #f2f2f2 solid;
@@ -41,12 +44,47 @@ input::-moz-placeholder {
 .div-from button {
 	width: 260px;
 	height: 46px;
-	margin-top: 32px;
+	margin-top: 10px;
 	border-radius: 4px;
 	font-size: 18px;
 	line-height: 48px;
 	text-align: center;
-	background-color: #3bc975;
+	background: #3bc975!important;
 	color: white;
-	cursor: pointer
+	cursor: pointer;
+	padding: 0!important;
+}
+
+.div-from button:hover{
+	background: #3dd982 !important;
+}
+
+.div-register-item{
+	width: 500px;
+	height: 46px;
+	margin: 20px auto;
+}
+
+.div-register-item p{
+	margin-bottom: 0;
+	line-height: 46px;
+}
+
+.div-register-item input{
+	float: right;
+}
+
+.check-session{
+	width: 20px!important;
+	height: 20px!important;
+	margin-left: 5px!important;
+	background: white;
+	border: 1px #3bc975 solid;
+}
+
+.div-check-session{
+	line-height: 46px;
+	width: 260px;
+	height: 46px;
+	margin: 0 auto;
 }
